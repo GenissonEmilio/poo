@@ -6,11 +6,12 @@ public abstract class Usuario {
     protected String nome;
     protected int id;
     protected String email;
+    private static int contadorId = 0;
 
-    public Usuario(String nome, int id, String email) {
+    public Usuario(String nome, String email) {
         String padrao = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
         this.nome = nome;
-        this.id = id;
+        this.id = gerarId();
         this.email = email.matches(padrao) ? email : "";
     }
 
@@ -52,5 +53,9 @@ public abstract class Usuario {
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
         return id == usuario.id && Objects.equals(nome, usuario.nome) && Objects.equals(email, usuario.email);
+    }
+
+    private int gerarId() {
+        return ++contadorId;
     }
 }

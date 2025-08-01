@@ -6,6 +6,7 @@ public class Professor extends Usuario {
         super(nome, id, email);
     }
 
-
-
+    public boolean podeReservar(int diasAntecedencia) {
+        return diasAntecedencia <= 5;
+    }
 }

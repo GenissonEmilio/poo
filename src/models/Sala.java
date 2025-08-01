@@ -1,4 +1,9 @@
 package models;
 
-public class Sala {
+import interfaces.Reservavel;
+
+import java.util.List;
+
+public class Sala implements Reservavel {
+
 }

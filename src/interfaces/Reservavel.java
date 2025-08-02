@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Reservavel {
     public boolean reservar(Reserva r);
-    public boolean cancelar(String idReserva);
+    public boolean cancelar(int idReserva);
     public List<Reserva> listarReservas();
 
 }
